@@ -19,7 +19,7 @@ const fetchFarms = ctrlWrapper(async (req, res) => {
 
   const listFarms = await Farm.find({});
 
-  res.status(201).json({Farms:listFarms});
+  res.status(201).json({listFarms});
 });
 
 module.exports = {addFarm, fetchFarms};
