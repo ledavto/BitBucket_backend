@@ -21,7 +21,7 @@ const fetchProducts = ctrlWrapper(async (req, res) => {
 
   const listProducts = await Product.find({ ownerFarm });
 
-  res.status(201).json({products:listProducts});
+  res.status(201).json(listProducts);
 });
 
 module.exports = {addProduct, fetchProducts};
