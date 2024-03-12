@@ -1,6 +1,6 @@
-const { HttpError, ctrlWrapper } = require('../helpers');
+const { HttpError, ctrlWrapper } = require("../helpers");
 
-const {Product} = require('../models');
+const { Product } = require("../models");
 
 const addProduct = ctrlWrapper(async (req, res) => {
   const { id: ownerFarm } = req.params;
@@ -24,4 +24,11 @@ const fetchProducts = ctrlWrapper(async (req, res) => {
   res.status(201).json(listProducts);
 });
 
-module.exports = {addProduct, fetchProducts};
+const fetchProductById = ctrlWrapper(async (req, res) => {
+  const { id } = req.params;
+
+  const product = await Product.find({ id });
+
+  res.status(201).json(product);
+});
+module.exports = { addProduct, fetchProducts, fetchProductById };
