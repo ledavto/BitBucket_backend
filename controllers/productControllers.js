@@ -27,7 +27,7 @@ const fetchProducts = ctrlWrapper(async (req, res) => {
 const fetchProductById = ctrlWrapper(async (req, res) => {
   const { id } = req.params;
 
-  const product = await Product.find({ id });
+  const product = await Product.findById(id);
 
   res.status(201).json(product);
 });
