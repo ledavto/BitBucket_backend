@@ -10,8 +10,10 @@ const addOrder = ctrlWrapper(async (req, res) => {
   // if (isProductExists) {
   //   throw HttpError(409, `Farm "${title}" already exist`);
   // }
+  console.log(req.body);
 
-  const result = await Order.create({ ...req.body });
+  const result = await Order.create(req.body);
+  console.log(result);
   res.status(201).json(result);
 });
 
