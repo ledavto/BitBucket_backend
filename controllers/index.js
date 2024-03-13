@@ -5,10 +5,14 @@ const {
   fetchProductById,
 } = require("./productControllers");
 
+const { addOrder, fetchOrder } = require("./orderControllers");
+
 module.exports = {
   addFarm,
   fetchFarms,
   addProduct,
   fetchProducts,
   fetchProductById,
+  addOrder,
+  fetchOrder,
 };
